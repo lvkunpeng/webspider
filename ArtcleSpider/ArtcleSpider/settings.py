@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import os
 # Scrapy settings for ArtcleSpider project
 #
 # For simplicity, this file contains only settings considered important or
@@ -64,9 +64,27 @@ ROBOTSTXT_OBEY = False
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'ArtcleSpider.pipelines.ArtclespiderPipeline': 300,
-#}
+#控制pipelines取用的item,pipline即是数据流通的管道的意思,后面的参数为数据流的处理顺序,数字越小的越先处理
+ITEM_PIPELINES = {
+   'ArtcleSpider.pipelines.JsonWithEncodingPipeline': 2,
+   # 将数据流中你设定的子段,中的图片下载到本地
+   # 'scrapy.pipelines.images.ImagesPipeline': 1,
+   'ArtcleSpider.pipelines.ArticleImagePipeline': 1,
+}
+
+# 配置数据留中你想要的下载的图片的子段
+IMAGES_URLS_FIELD = 'front_image_url'
+
+# 获取当前settings的路径
+project_dir = os.path.abspath(os.path.dirname(__file__))
+
+# 配置下载的图片的保存路径   注意：执行时可能会报错没有PIL模块(图片解析模块),在虚拟环境中安装pillow即可解决
+# 安装命令 pip install -i https://pypi.douban.com/simple pillow
+IMAGES_STORE = os.path.join(project_dir, 'images')
+
+# 配置下载的图片的最大最小值
+# IMAGES_MIN_HEIGHT = 100
+# IMAGES_MIN_WIDTH = 100
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
