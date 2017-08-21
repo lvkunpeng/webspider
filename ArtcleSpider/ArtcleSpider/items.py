@@ -14,7 +14,9 @@ class ArtclespiderItem(scrapy.Item):
     pass
 # 通过自定义一个数据类,来接收scrapy爬取到的子段，并将相同的子段区分传到piplines中去,同时保存,还可以将相同的子段进行去重
 class JobBoleArticleItem(scrapy.Item):
+    #文章标题
     title = scrapy.Field()
+    #文章创建日期
     create_date = scrapy.Field()
     url = scrapy.Field()
     #封面图的外网地址
