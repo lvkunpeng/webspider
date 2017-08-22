@@ -5,6 +5,8 @@
 import re
 #引入scrapy
 import scrapy
+#引入datatime库进行日期格式转化
+import datetime
 #引入响应模块
 from scrapy.http import Request
 #引入parse模块拼接完整的url
@@ -70,10 +72,12 @@ class JobboleSpider(scrapy.Spider):
 
 
         #提取文章收藏数
-        fav_nums = response.xpath("//span[contains(@class, 'bookmark-btn')]/text()").extract()[0]
+        fav_nums = response.css(".bookmark-btn::text").extract()[0]
         match_re = re.match(".*?(\d+).*", fav_nums)
         if match_re:
-            fav_nums = match_re.group(1)
+            fav_nums = int(match_re.group(1))
+        else:
+            fav_nums = 0
 
         #提取文章正文
         content = response.xpath("//div[@class='entry']").extract()[0]
@@ -88,10 +92,11 @@ class JobboleSpider(scrapy.Spider):
         article_item["url_object_id"] = get_md5(response.url)
         article_item["title"] = title
         article_item["url"] = response.url
-        # try:
-        #     create_date = datetime.datetime.strptime(create_date, "%Y/%m/%d").date()
-        # except Exception as e:
-        #     create_date = datetime.datetime.now().date()
+        #进行日期转化,并对异常的日期进行捕获
+        try:
+            create_date = datetime.datetime.strptime(create_date, "%Y/%m/%d").date()
+        except Exception as e:
+            create_date = datetime.datetime.now().date()
         article_item["create_date"] = create_date
 
         # 此处要写成数组的格式,因为传递到pipline的时候需要传递一个数组

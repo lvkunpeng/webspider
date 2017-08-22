@@ -66,10 +66,12 @@ ROBOTSTXT_OBEY = False
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 #控制pipelines取用的item,pipline即是数据流通的管道的意思,后面的参数为数据流的处理顺序,数字越小的越先处理
 ITEM_PIPELINES = {
-   'ArtcleSpider.pipelines.JsonExporterPipleLine': 2,
+   #'ArtcleSpider.pipelines.JsonExporterPipleLine': 2,
    # 将数据流中你设定的子段,中的图片下载到本地
-   # 'scrapy.pipelines.images.ImagesPipeline': 1,
+   'scrapy.pipelines.images.ImagesPipeline': 2,
    'ArtcleSpider.pipelines.ArticleImagePipeline': 1,
+   #'ArtcleSpider.pipelines.MysqlPipeline': 1,
+   'ArtcleSpider.pipelines.MysqlTwistedPipeline': 20,
 }
 
 # 配置数据留中你想要的下载的图片的子段
@@ -106,3 +108,11 @@ IMAGES_STORE = os.path.join(project_dir, 'images')
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+
+## 可以在这里配置MYSQL的基本信息
+
+MYSQL_HOST = "localhost"
+MYSQL_DBNAME = "scrapydb"
+MYSQL_USER = "root"
+MYSQL_PASSWORD = "11space123"
