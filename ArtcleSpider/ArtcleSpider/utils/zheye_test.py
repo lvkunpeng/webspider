@@ -1,4 +1,4 @@
 from zheye import zheye
 z = zheye()
-positions = z.Recognize('path/to/captcha.gif')
+positions = z.Recognize('cn.gif')
 print(positions)

@@ -17,4 +17,6 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 
 #配置执行jobbole的命令
-execute(["scrapy","crawl","jobbole"])
+#execute(["scrapy","crawl","jobbole"])
+#execute(["scrapy","crawl","tianyan"])
+execute(["scrapy","crawl","zhihu"])
