@@ -10,7 +10,7 @@ except:
     from urllib import parse
 
 from scrapy.loader import ItemLoader
-from ArtcleSpider.items import ZhihuQusetionItem, ZhihuAnswerItem
+from items import ZhihuQusetionItem, ZhihuAnswerItem
 
 class ZhihuSpider(scrapy.Spider):
     name = 'zhihu'

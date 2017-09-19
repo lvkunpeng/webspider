@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0045eb90-b2fb-449e-81a9-a5300aac8535" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/ArtcleSpider/ArtcleSpider/zheye" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ArtcleSpider/ArtcleSpider/cn.gif" afterPath="$PROJECT_DIR$/ArtcleSpider/ArtcleSpider/utils/cn.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webspiders.iml" afterPath="$PROJECT_DIR$/.idea/webspiders.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArtcleSpider/ArtcleSpider/items.py" afterPath="$PROJECT_DIR$/ArtcleSpider/ArtcleSpider/items.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArtcleSpider/ArtcleSpider/settings.py" afterPath="$PROJECT_DIR$/ArtcleSpider/ArtcleSpider/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArtcleSpider/ArtcleSpider/utils/zheye_test.py" afterPath="$PROJECT_DIR$/ArtcleSpider/ArtcleSpider/utils/zheye_test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArtcleSpider/ArtcleSpider/utils/zhihu_login_request.py" afterPath="$PROJECT_DIR$/ArtcleSpider/ArtcleSpider/utils/zhihu_login_request.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArtcleSpider/main.py" afterPath="$PROJECT_DIR$/ArtcleSpider/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scrapyenv/lib/python3.5/site-packages/PIL/ImageShow.py" afterPath="$PROJECT_DIR$/scrapyenv/lib/python3.5/site-packages/PIL/ImageShow.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scrapyenv/pip-selfcheck.json" afterPath="$PROJECT_DIR$/scrapyenv/pip-selfcheck.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zheye" afterPath="$PROJECT_DIR$/zheye" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -71,8 +62,8 @@
       <file leaf-file-name="lagou.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ArtcleSpider/ArtcleSpider/spiders/lagou.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+            <state relative-caret-position="200">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -161,11 +152,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="198" />
-    <option name="y" value="28" />
-    <option name="width" value="1519" />
-    <option name="height" value="1018" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="65" />
+    <option name="y" value="95" />
+    <option name="width" value="1287" />
+    <option name="height" value="665" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -390,10 +381,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="28" width="1442" height="746" extended-state="6" />
+    <frame x="-1" y="28" width="1922" height="1019" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17122301" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12727273" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37235773" sideWeight="0.50633675" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994652" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -401,7 +392,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32376578" sideWeight="0.49786097" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3432836" sideWeight="0.49366325" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24948876" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39839265" sideWeight="0.49547374" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3979933" sideWeight="0.49547374" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.489093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994652" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -795,8 +786,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ArtcleSpider/ArtcleSpider/spiders/lagou.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        <state relative-caret-position="200">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
           </folding>
