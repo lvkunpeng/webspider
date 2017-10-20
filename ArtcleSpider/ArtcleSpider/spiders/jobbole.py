@@ -12,9 +12,9 @@ from scrapy.http import Request
 #引入parse模块拼接完整的url
 from urllib import parse
 #引入对应的iteam
-from ArtcleSpider.items import JobBoleArticleItem
+#from items import JobBoleArticleItem
 # 引入utils.common 导入转化md5模块
-from ArtcleSpider.utils.common import get_md5
+from utils.common import get_md5
 
 #定义一个类
 class JobboleSpider(scrapy.Spider):

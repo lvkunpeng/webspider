@@ -64,3 +64,22 @@ class ZhihuAnswerItem(scrapy.Item):
     update_num = scrapy.Field()
     crawl_time = scrapy.Field()
 
+# 百度百科的狗
+class Baidu_dogItem(scrapy.Item):
+    kind = scrapy.Field()
+    intro = scrapy.Field()
+    url_object_id = scrapy.Field()
+    base_info = scrapy.Field()
+    image_url = scrapy.Field()
+    url = scrapy.Field()
+    image_path = scrapy.Field()
+
+# 有宠百科的宠物数据
+class Youchong_Item(scrapy.Item):
+    kind = scrapy.Field()
+    intro = scrapy.Field()
+    url_object_id = scrapy.Field()
+    base_info = scrapy.Field()
+    image_url = scrapy.Field()
+    url = scrapy.Field()
+    image_path = scrapy.Field()

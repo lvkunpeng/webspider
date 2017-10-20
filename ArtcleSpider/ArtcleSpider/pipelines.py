@@ -72,7 +72,7 @@ class ArticleImagePipeline(ImagesPipeline):
     def item_completed(self, results, item, info):
         for ok, value in results:
             image_file_path = value["path"]
-        item["front_image_path"] = image_file_path
+        item["image_path"] = image_file_path
 
         return item
 
@@ -88,15 +88,15 @@ class MysqlPipeline(object):
         self.conn = MySQLdb.connect("localhost", "root", "11space123", "scrapydb", charset="utf8", use_unicode=True)
         self.cursor = self.conn.cursor()
 
-    def process_item(self, item, spider):
-        # , front_image_path, front_image_url, comment_nums, fav_nums, praise_nums, tags, content
-        insert_sql = """
-                    insert into jobbole_article(title, url, create_date, fav_nums)
-                    VALUES (%s, %s, %s, %s)
-                """
-        print(insert_sql)
-        self.cursor.execute(insert_sql, (item["title"], item["url"], item["create_date"], item["fav_nums"]))
-        self.conn.commit()
+    # def process_item(self, item, spider):
+    #     # , front_image_path, front_image_url, comment_nums, fav_nums, praise_nums, tags, content
+    #     insert_sql = """
+    #                 insert into jobbole_article(title, url, create_date, fav_nums)
+    #                 VALUES (%s, %s, %s, %s)
+    #             """
+    #     print(insert_sql)
+    #     self.cursor.execute(insert_sql, (item["title"], item["url"], item["create_date"], item["fav_nums"]))
+    #     self.conn.commit()
 
 
 # 异步将爬取数据写入mysql当中(推荐)
@@ -140,15 +140,26 @@ class MysqlTwistedPipeline(object):
         print(failure)
 
     # 自定义需要异步执行的函数（插入数据函数）
+    # def do_insert(self, cursor, item):
+    #     # 执行具体的插入
+    #     insert_sql = """
+    #                        insert into jobbole_art(title, url, create_date, fav_nums,  url_object_id, front_image_path, front_image_url, comment_nums, praise_nums, tags, content)
+    #                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+    #                    """
+    #     # 这个函数中的cursor就是下面的cursor,并会自动帮我们执行self.conn.commit()操作
+    #     print(item)
+    #     cursor.execute(insert_sql, (
+    #     item["title"], item["url"], item["create_date"], item["fav_nums"], item["url_object_id"],
+    #     item["front_image_path"], item["front_image_url"][0], item["comment_nums"], item["praise_nums"], item["tags"],
+    #                    item["content"]))
+
     def do_insert(self, cursor, item):
         # 执行具体的插入
-        insert_sql = """
-                           insert into jobbole_article(title, url, create_date, fav_nums,  url_object_id, front_image_path, front_image_url, comment_nums, praise_nums, tags, content)
-                           VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                       """
+        insert_sql = """    
+                             insert into youchong(url_object_id, kind, url, base_info, intro, image_url)
+                             VALUES (%s, %s, %s, %s, %s, %s)
+                        """
         # 这个函数中的cursor就是下面的cursor,并会自动帮我们执行self.conn.commit()操作
         print(item)
         cursor.execute(insert_sql, (
-        item["title"], item["url"], item["create_date"], item["fav_nums"], item["url_object_id"],
-        item["front_image_path"], item["front_image_url"][0], item["comment_nums"], item["praise_nums"], item["tags"],
-                       item["content"]))
+            item["url_object_id"], item["kind"], item["url"], item["base_info"], item["intro"],item["image_url"][0]))
