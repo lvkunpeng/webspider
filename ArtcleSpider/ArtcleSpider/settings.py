@@ -71,11 +71,11 @@ ITEM_PIPELINES = {
     'scrapy.pipelines.images.ImagesPipeline': 2,
     'ArtcleSpider.pipelines.ArticleImagePipeline': 1,
     # 'ArtcleSpider.pipelines.MysqlPipeline': 1,
-    'ArtcleSpider.pipelines.MysqlTwistedPipeline': 20,
+    'ArtcleSpider.pipelines.MysqlTwistedPipeline': 3,
 }
 
 # 配置数据留中你想要的下载的图片的子段
-IMAGES_URLS_FIELD = 'front_image_url'
+IMAGES_URLS_FIELD = 'image_url'
 
 # 获取当前settings的路径
 project_dir = os.path.abspath(os.path.dirname(__file__))
